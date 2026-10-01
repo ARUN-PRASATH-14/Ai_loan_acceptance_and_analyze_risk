@@ -89,14 +89,17 @@ def init_shap_explainer(model):
     try:
         return shap.TreeExplainer(model)
     except Exception as e:
-        print(f"TreeExplainer error: {e}. Attempting Explainer fallback...")
+        print(f"TreeExplainer warning: {e}. Attempting predict_proba Explainer fallback...")
         try:
+            if hasattr(model, "predict_proba"):
+                return shap.Explainer(model.predict_proba)
             return shap.Explainer(model)
         except Exception as e2:
-            print(f"SHAP Explainer fallback failed: {e2}")
+            print(f"SHAP Explainer fallback notice: {e2}")
             return None
 
 explainer = init_shap_explainer(model)
+
 
 
 print("Loading FAISS & BM25 Hybrid RAG components...")
@@ -922,9 +925,28 @@ def serve_static_file(path):
             return f.read()
     return "File not found."
 
+import gradio as gr
+from fastapi import FastAPI
+from fastapi.middleware.wsgi import WSGIMiddleware
+
+fastapi_app = FastAPI(title="Loan-IQ API Engine")
+fastapi_app.mount("/", WSGIMiddleware(app))
+
+# Define Gradio Blocks demo at top-level module scope for HF Space detection
+with gr.Blocks(title="Loan-IQ Autonomous Credit Risk Engine") as demo:
+    gr.HTML("""
+    <style>
+      body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+      iframe { width: 100%; height: 95vh; border: none; }
+    </style>
+    <iframe src="/index.html"></iframe>
+    """)
+
+app_gradio = gr.mount_gradio_app(fastapi_app, demo, path="/gradio")
+
 if __name__ == "__main__":
+    import uvicorn
     port = int(os.getenv("PORT", 7860))
     host = os.getenv("HOST", "0.0.0.0")
-    debug = os.getenv("DEBUG", "False").lower() == "true"
     print(f"🚀 Starting Loan-IQ Server at http://{host}:{port} ...")
-    app.run(host=host, port=port, debug=debug)
+    uvicorn.run(fastapi_app, host=host, port=port)
