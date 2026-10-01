@@ -879,8 +879,8 @@ def serve_static_file(path):
     return "File not found."
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 5000))
+    port = int(os.getenv("PORT", 7860))
     host = os.getenv("HOST", "0.0.0.0")
     debug = os.getenv("DEBUG", "False").lower() == "true"
-    print(f"🚀 Starting Loan-IQ Flask Server at http://{host}:{port} ...")
+    print(f"🚀 Starting Loan-IQ Server at http://{host}:{port} ...")
     app.run(host=host, port=port, debug=debug)
