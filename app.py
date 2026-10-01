@@ -929,7 +929,17 @@ def serve_static_file(path):
 
 import gradio as gr
 
+try:
+    import spaces
+    def gpu_decorator(func):
+        return spaces.GPU(func)
+except Exception:
+    def gpu_decorator(func):
+        return func
+
+@gpu_decorator
 def gradio_evaluate_loan(bank, loan_type, existing_customer, employer, emp_type, age, income, co_app_inc, loan_amt, tenure_mo, int_rate, cibil, is_ntc, exist_emi, prop_val, emp_years, business_vintage, course_approved, tn_city):
+
     data = {
         "bank": bank,
         "loan_type": loan_type,
@@ -978,7 +988,9 @@ def gradio_evaluate_loan(bank, loan_type, existing_customer, employer, emp_type,
 
     return status_str, prob_str, metrics_str, rec_html
 
+@gpu_decorator
 def gradio_chat_bot(message, history):
+
     if not message.strip():
         return "Please enter a valid policy query."
     hybrid_results = hybrid_rrf_search(message, top_k=6)
