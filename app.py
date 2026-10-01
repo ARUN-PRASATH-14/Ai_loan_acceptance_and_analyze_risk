@@ -928,21 +928,124 @@ def serve_static_file(path):
     return "File not found."
 
 import gradio as gr
-from fastapi.middleware.wsgi import WSGIMiddleware
 
-with gr.Blocks(title="Loan-IQ Autonomous Credit Risk Engine") as demo:
-    gr.HTML("""
-    <style>
-      body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-      iframe { width: 100%; height: 95vh; border: none; }
-    </style>
-    <iframe src="/flask"></iframe>
-    """)
+def gradio_evaluate_loan(bank, loan_type, existing_customer, employer, emp_type, age, income, co_app_inc, loan_amt, tenure_mo, int_rate, cibil, is_ntc, exist_emi, prop_val, emp_years, business_vintage, course_approved, tn_city):
+    data = {
+        "bank": bank,
+        "loan_type": loan_type,
+        "existing_customer": existing_customer,
+        "employer": employer,
+        "gender": "Male",
+        "emp_type": emp_type,
+        "age": age,
+        "income": income,
+        "co_app_inc": co_app_inc,
+        "loan_amt": loan_amt,
+        "tenure_mo": tenure_mo,
+        "int_rate": int_rate,
+        "cibil": cibil,
+        "is_ntc": is_ntc,
+        "exist_emi": exist_emi,
+        "prop_val": prop_val,
+        "emp_years": emp_years,
+        "business_vintage": business_vintage,
+        "course_approved": course_approved,
+        "tn_city": tn_city
+    }
+    
+    anomalies, violations = AnomalyAgent.run_anomaly_check_tool(data)
+    risk_res = RiskAgent.run_risk_scoring_tool(data, preprocessor, model, feature_names, THRESHOLD)
+    prob = risk_res["probability"]
+    foir = risk_res["foir"]
+    ltv = risk_res["ltv"]
+    proposed_emi = risk_res["proposed_emi"]
+    df_processed = risk_res["df_processed"]
 
-demo.app.mount("/flask", WSGIMiddleware(app))
+    is_hard_rejected = len(violations) > 0
+    approved = (prob >= THRESHOLD) and not is_hard_rejected
+
+    recommendations = RecommendationAgent.run_recommendation_tool(
+        bank, loan_type, approved, is_hard_rejected, prob, foir, cibil, is_ntc, violations
+    )
+
+    status_str = "🟢 APPROVED" if approved else ("🔴 REJECTED (Hard Policy Breach)" if is_hard_rejected else "🟡 REJECTED (Low Credit Score)")
+    prob_str = f"{round(0.0 if is_hard_rejected else prob * 100, 1)}%"
+    metrics_str = f"Monthly EMI: ₹{round(proposed_emi):,} | FOIR: {round(foir * 100, 1)}% | LTV: {round(ltv * 100, 1) if loan_type == 'Home Loan' else 'N/A'}%"
+    
+    rec_html = "### 📋 AI Underwriting Rationale & Recommendations\n" + "\n".join([f"- {r}" for r in recommendations])
+    if violations:
+        rec_html += "\n\n### ⚠️ Hard Policy Violations\n" + "\n".join([f"- ❌ {v}" for v in violations])
+
+    return status_str, prob_str, metrics_str, rec_html
+
+def gradio_chat_bot(message, history):
+    if not message.strip():
+        return "Please enter a valid policy query."
+    hybrid_results = hybrid_rrf_search(message, top_k=6)
+    return _local_policy_synthesize(message, [], [], None)
+
+with gr.Blocks(title="Loan-IQ: Autonomous Credit Risk & Policy Engine", theme=gr.themes.Soft()) as demo:
+    gr.Markdown("# 🏦 Loan-IQ: Autonomous Credit Risk & Policy Engine")
+    gr.Markdown("Enterprise-Grade Stacking Ensemble ML Credit Scoring, SHAP Explainability & Hybrid Multi-Bank Policy RAG Engine")
+
+    with gr.Tab("🏦 AI Loan Acceptance & Risk Analyzer"):
+        with gr.Row():
+            with gr.Column():
+                bank = gr.Dropdown(["SBI", "HDFC", "ICICI", "IOB", "Canara"], value="SBI", label="Select Financial Institution")
+                loan_type = gr.Dropdown(["Home Loan", "Personal Loan", "Auto Loan", "Education Loan"], value="Home Loan", label="Loan Product Type")
+                tn_city = gr.Dropdown(["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Tirunelveli", "Erode", "Vellore", "Other"], value="Chennai", label="Location (Tamil Nadu City)")
+                
+                with gr.Row():
+                    income = gr.Number(value=85000, label="Monthly Income (₹)")
+                    co_app_inc = gr.Number(value=0, label="Co-Applicant Income (₹)")
+                    exist_emi = gr.Number(value=12000, label="Existing Monthly EMIs (₹)")
+
+                with gr.Row():
+                    loan_amt = gr.Number(value=4500000, label="Requested Loan Amount (₹)")
+                    tenure_mo = gr.Number(value=240, label="Tenure (Months)")
+                    int_rate = gr.Number(value=8.5, label="Interest Rate (%)")
+
+                with gr.Row():
+                    cibil = gr.Slider(300, 900, value=780, step=5, label="CIBIL Bureau Score")
+                    is_ntc = gr.Checkbox(value=False, label="New To Credit (NTC)")
+                    existing_customer = gr.Checkbox(value=True, label="Existing Salary Account Customer")
+
+                with gr.Row():
+                    employer = gr.Dropdown(["Tier A (Top MNC)", "Tier B (Mid-Size)", "Tier C (Small Pvt)", "Government / PSU", "Self-Employed"], value="Tier B (Mid-Size)", label="Employer Category")
+                    emp_type = gr.Dropdown(["Salaried", "Self-Employed Professional", "Self-Employed Business"], value="Salaried", label="Employment Type")
+                    age = gr.Number(value=32, label="Applicant Age")
+
+                with gr.Row():
+                    prop_val = gr.Number(value=60, label="Estimated Property Value (Lakhs ₹ - Home Loan)")
+                    emp_years = gr.Number(value=5, label="Employment / Job Vintage (Years)")
+                    business_vintage = gr.Number(value=0, label="Business Vintage (Years)")
+                    course_approved = gr.Checkbox(value=False, label="Premier Institute Approved (Education Loan)")
+
+                eval_btn = gr.Button("⚡ Run Underwriting Risk Assessment", variant="primary")
+
+            with gr.Column():
+                out_status = gr.Textbox(label="Decision Status", interactive=False)
+                out_prob = gr.Textbox(label="Approval Probability Score", interactive=False)
+                out_metrics = gr.Textbox(label="Key Obligations (EMI / FOIR / LTV)", interactive=False)
+                out_rationale = gr.Markdown(label="AI Decision Rationale & Recommendations")
+
+        eval_btn.click(
+            gradio_evaluate_loan,
+            inputs=[bank, loan_type, existing_customer, employer, emp_type, age, income, co_app_inc, loan_amt, tenure_mo, int_rate, cibil, is_ntc, exist_emi, prop_val, emp_years, business_vintage, course_approved, tn_city],
+            outputs=[out_status, out_prob, out_metrics, out_rationale]
+        )
+
+    with gr.Tab("📚 Multi-Bank Policy RAG Assistant"):
+        gr.Markdown("### Ask any question about SBI, HDFC, ICICI, Canara, IOB, or RBI KYC/AML policies")
+        chatbot = gr.ChatInterface(
+            fn=gradio_chat_bot,
+            examples=[
+                "What is SBI's minimum CIBIL score requirement for Home Loans?",
+                "What is HDFC Bank's maximum allowable FOIR for personal loans?",
+                "What are RBI's master directions for KYC and Video Customer Identification Process (V-CIP)?",
+                "Canara Bank education loan guidelines for studies abroad"
+            ]
+        )
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 7860))
-    host = os.getenv("HOST", "0.0.0.0")
-    print(f"🚀 Starting Loan-IQ Gradio Server at http://{host}:{port} ...")
-    demo.launch(server_name=host, server_port=port)
+    demo.launch()
