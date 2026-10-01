@@ -1,4 +1,16 @@
+---
+title: Loan IQ AI Credit Risk Engine
+emoji: 🏦
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 4.44.0
+app_file: app.py
+pinned: false
+---
+
 # 🏦 Loan-IQ: Autonomous Credit Risk & Policy Engine
+
 
 Loan-IQ is an enterprise-grade AI credit scoring, explainability, and multi-bank policy RAG system. It combines a 2-tier Stacking Ensemble Machine Learning model (XGBoost, LightGBM, CatBoost, Random Forest + ANN Meta-Learner), SHAP explainable AI, and an **Advanced Hybrid Policy RAG Engine (FAISS + BM25)** with **Reciprocal Rank Fusion (RRF) Re-Ranking**.
 
