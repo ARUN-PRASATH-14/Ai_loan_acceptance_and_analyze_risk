@@ -1,0 +1,204 @@
+================================================================================
+STATE BANK OF INDIA (SBI) COMPREHENSIVE POLICY MANUAL 2025-2026
+SUBJECT: CUSTOMER IDENTIFICATION (KYC/CDD), RISK CLASSIFICATION, AND UNDERWRITING GUIDELINES FOR HOME, PERSONAL, SCHOLAR, KISAN CREDIT CARD (KCC), AND MUDRA LOANS
+DOCUMENT REFERENCE: SBI/RETAIL-CREDIT/2025-26/MANUAL-FULL
+================================================================================
+
+CHAPTER 1: SBI KYC & CUSTOMER ONBOARDING STANDARDS
+--------------------------------------------------------------------------------
+1.1 Mandate & Scope:
+State Bank of India (SBI) enforces strict adherence to RBI Master Directions on KYC/AML/CFT. Every individual and legal entity opening an account or seeking credit facilities must undergo mandatory verification prior to account activation, credit sanction, or loan disbursal.
+
+1.2 Officially Valid Documents (OVDs) Accepted at SBI:
+1. Proof of Identity (PoI): PAN Card (Mandatory under IT Rule 114B), Passport, Voter ID Card, Aadhaar Card (Masked format), Driving Licence, NREGA Job Card signed by State Govt official.
+2. Proof of Address (PoA): Aadhaar Card, Passport, Driving Licence, Voter ID, Utility Bills (Electricity/Piped Gas/Telephone bill not older than 2 months), Property or Municipal Tax Receipt.
+3. Form 60: Allowed strictly for agricultural borrowers or individuals exempt from income tax, subject to verification by the Branch Manager.
+
+1.3 Digital Onboarding via SBI YONO & Video KYC (V-CIP):
+- Customers applying for digital savings accounts or express personal loans can complete Video-CIP on the SBI YONO application.
+- Verification includes real-time face matching against Aadhaar/PAN photo, geotagging (ensuring physical presence within Indian borders), live PAN extraction, and OTP-based Aadhaar e-KYC.
+- Digital accounts opened via V-CIP are treated on par with branch-opened accounts without operational restrictions.
+
+1.4 Periodic KYC Updation Standards & RBI Relief Window (2025-2026):
+- High Risk Customers: Full physical KYC updation required every 2 years.
+- Medium Risk Customers: Full KYC updation required every 8 years.
+- Low Risk Customers: Full KYC updation required every 10 years.
+- RBI 2025-2026 Relief Window: Low-Risk individual accounts due for periodic updation in 2025 have until June 30, 2026 (or 1 year from original due date, whichever is later) to complete re-KYC. Self-declaration of no-change in address/KYC can be submitted through YONO App, SBI NetBanking, or ATM kiosks without visiting a branch.
+
+CHAPTER 2: SBI GENERAL CREDIT UNDERWRITING & RISK EVALUATION MATRIX
+--------------------------------------------------------------------------------
+2.1 Credit Score (CIBIL) Slabs & Pricing Grid:
+- CIBIL Score 800 and above: Exceptional. Lowest MCLR rate, zero processing fee, instant digital disbursal.
+- CIBIL Score 750 to 799: Prime Borrower. Eligible for benchmark MCLR/EBLR rate with zero spread. Zero processing fee during festive offers.
+- CIBIL Score 700 to 749: Standard Category. Standard interest rate. Normal processing fees apply.
+- CIBIL Score 650 to 699: Acceptable with Risk Markup of +0.25% to +0.50% spread. Subject to manual approval by Credit Processing Cell (CPC).
+- CIBIL Score below 650: Automatic hard rejection for non-salary account holders. SBI Corporate Salary Package (CSP) customers enjoy 50 points relaxation, minimum floor is 650 CIBIL.
+- NTC (New to Credit / CIBIL Score 0 or -1): Permitted for Home Loans with strict FOIR of 50%. Not permitted for standard unsecured Personal Loans unless income is above ₹30,000 per month.
+
+2.2 Fixed Obligation to Income Ratio (FOIR) Formula & Limits:
+- Net Monthly Income (NMI) = Gross Monthly Income minus mandatory statutory deductions (PF, Income Tax, Professional Tax).
+- FOIR Formula: (Total Existing Monthly EMIs + Proposed SBI Loan EMI) / NMI.
+- NMI up to ₹50,000: Maximum FOIR 50%.
+- NMI ₹50,001 to ₹1,00,000: Maximum FOIR 55%.
+- NMI ₹1,00,001 to ₹2,00,000: Maximum FOIR 60%.
+- NMI above ₹2,00,000: Maximum FOIR 65%.
+- Existing SBI Salary Account Holders (CSP): 5% additional FOIR relaxation. Tier A MNC Employees: additional 5% FOIR relaxation.
+- Applicants with Tier A (Top MNC) employer and salary account: FOIR up to 75% considered on a case-by-case basis by CPC.
+
+2.3 Income Multipliers for Tamil Nadu Cities:
+- Chennai (Tier 1 Metro): Income thresholds multiplied by 1.2x (20% higher standard).
+- Coimbatore, Madurai, Trichy, Salem (Tier 2): Standard multiplier 1.0x.
+- Vellore, Rural TN (Tier 3): Income thresholds multiplied by 0.8x (20% lower threshold allowed).
+
+CHAPTER 3: SBI HOME LOAN PRODUCTS (REGULAR, MAXGAIN, CRE, TRIBAL PLUS)
+--------------------------------------------------------------------------------
+3.1 Target Profile & Age Thresholds:
+- Applicant Categories: Resident Salaried, Self-Employed Professionals, Self-Employed Businessmen, NRIs, PIOs, Agriculturists.
+- Minimum Entry Age: 18 years.
+- Maximum Exit Age: 70 years at loan maturity (age at sanction + tenure must not exceed 70 years).
+
+3.2 Loan to Value (LTV) Ratios for Home Loans:
+- Property Value up to ₹30,00,000: Maximum LTV 90% of property value.
+- Property Value ₹30,00,001 to ₹75,00,000: Maximum LTV 80% of property value.
+- Property Value above ₹75,00,000: Maximum LTV 75% of property value.
+
+3.3 Interest Rates for SBI Home Loans (2025-2026):
+- CIBIL 800+: EBLR + 0.00% = effective ~8.50% p.a.
+- CIBIL 750-799: EBLR + 0.05% = effective ~8.55% p.a.
+- CIBIL 700-749: EBLR + 0.10% = effective ~8.60% p.a.
+- CIBIL 650-699: EBLR + 0.25% to 0.50% = effective ~8.75% to 9.00% p.a.
+- Women Borrowers: Additional 0.05% concession on interest rate.
+- NRI Home Loans: Subject to FEMA regulations; processing via designated NRI branches.
+
+3.4 SBI Maxgain (Overdraft Home Loan):
+- Operates as an overdraft account linked to home loan. Excess funds deposited reduce interest calculated on daily outstanding balance.
+- Minimum Loan Amount: ₹20,00,000 (₹20 lakhs).
+- Eligible for CIBIL 700 and above only.
+
+3.5 Home Loan Documentation Checklist:
+- Salaried: PAN, Aadhaar, 3 months salary slips, Form 16 (last 2 years), 6 months bank statements.
+- Self-Employed: PAN, Aadhaar, ITR with computation (last 3 years), Audited Balance Sheet & P&L, GST Returns (12 months), 12 months current account statements.
+- Property Documents: Sale deed / Agreement for Sale, Approved Building Plan, NOC from Society/Builder, Encumbrance Certificate.
+
+CHAPTER 4: SBI PERSONAL LOAN PRODUCTS (XPRESS CREDIT & PENSION LOAN)
+--------------------------------------------------------------------------------
+4.1 SBI Xpress Credit Eligibility & Income Requirements:
+- Target Segment: Permanent employees of Central/State Govt, PSUs, Educational Institutions, and Corporate Companies (MNCs / Tier A listed entities) with salary account at SBI.
+- Minimum Net Monthly Income (NMI) by City Tier:
+  a) Chennai / Tier 1 Metro: Minimum NMI ₹24,000 per month (Gross approx ₹30,000).
+  b) Coimbatore, Madurai, Trichy, Salem (Tier 2): Minimum NMI ₹18,000 per month.
+  c) Vellore, Rural TN (Tier 3): Minimum NMI ₹15,000 per month.
+- Work Experience: Minimum 1 year total employment, minimum 6 months in current employer.
+- Maximum Loan Amount: 24 times NMI, capped at ₹30,00,000 (₹30 lakhs).
+- Maximum Tenure: 72 months (6 years).
+- Interest Rate: From 10.90% to 15.65% p.a. depending on CIBIL score and employer category.
+
+4.2 SBI Xpress Credit - NTC (New to Credit) Borrowers:
+- Permitted for NTC customers earning above ₹30,000 NMI in Chennai (₹24,000 in Tier 2, ₹20,000 in Tier 3).
+- Strictly limited to ₹5,00,000 maximum loan amount.
+- Maximum FOIR 40% for NTC Personal Loan applicants.
+
+4.3 SBI Personal Loan for Non-SBI Salary Customers (Insta Loan):
+- Minimum CIBIL Score: 700 for non-SBI salary account holders.
+- Minimum Income: ₹30,000 NMI for Tier 1, ₹25,000 for Tier 2, ₹20,000 for Tier 3.
+- Maximum Loan: 10 times NMI, capped at ₹10,00,000.
+
+4.4 SBI Pension Loan:
+- Target: SBI-paying pensioners, including Central/State Govt pensioners and Defense pensioners.
+- Maximum Loan: 18 months pension amount, capped at ₹14,00,000.
+- Age Limit: Pensioner must not exceed 76 years at loan maturity.
+
+4.5 Pre-closure & Foreclosure Charges:
+- Zero foreclosure charges for SBI Salary Package account holders after 6 EMIs.
+- Standard pre-closure fee of 3% on outstanding principal for non-package accounts.
+
+CHAPTER 5: SBI SCHOLAR & HIGHER EDUCATION LOAN POLICY (STUDENT CREDIT)
+--------------------------------------------------------------------------------
+5.1 Institutional Tiering & Collateral Limits:
+- List A Premier Institutes (IITs, IIMs, IISc, ISB, NLUs, AIIMS): Up to ₹40,00,000 WITHOUT COLLATERAL.
+- List B Institutes (NITs, Premier State Universities, NIFT, NID): Up to ₹20,00,000 WITHOUT COLLATERAL.
+- List C Institutes (State Recognized Colleges, private deemed universities): Up to ₹7,50,000 WITHOUT COLLATERAL; Above ₹7,50,000 requires 100% tangible collateral (residential property or FD).
+- Overseas Studies (SBI Global Ed-Vantage): Up to ₹1,50,00,000 with 100% tangible security (property/FD).
+- Vocational/Skill Development Courses: Up to ₹1,50,000 without collateral under PM Vidyalaxmi scheme.
+
+5.2 Interest Rates for Education Loans:
+- Loans up to ₹7.5 lakhs: Base rate approximately 10.00% p.a. (subject to RBI MCLR revisions).
+- Loans above ₹7.5 lakhs: Base rate approximately 10.50% to 11.00% p.a.
+- Women students receive 0.50% concession on interest rate.
+- Moratorium Period: Course Duration + 12 months (or 6 months after securing employment, whichever is earlier). Simple interest accrues during moratorium; servicing optional.
+
+5.3 Central Sector Interest Subsidy (CSIS) & PM Vidyalaxmi:
+- Full interest subsidy during entire moratorium for EWS families (annual income up to ₹4,50,000).
+- PM Vidyalaxmi Scheme: 75% credit guarantee for unsecured education loans up to ₹10 lakhs.
+- For families with income between ₹4.5 lakhs and ₹8 lakhs: 3% interest subvention for the first 4 years.
+
+5.4 Documentation for Education Loans:
+- Student: Aadhaar, PAN, Admission Letter from institution, Fee schedule, 2 passport photos.
+- Co-Borrower (Parent/Guardian): PAN, Aadhaar, Income proof (ITR/Form 16/Salary Slips), 6 months bank statement.
+- For loans above ₹7.5 lakhs: Property documents or FD receipts as collateral.
+
+CHAPTER 6: SBI KISAN CREDIT CARD (KCC) & AGRICULTURAL LOANS
+--------------------------------------------------------------------------------
+6.1 Scope & Scale of Finance:
+- Scale of Finance (SOF) determined by District Level Technical Committee (DLTC) per acre for Paddy, Sugarcane, Cotton, Groundnut, Maize, Pulses, Banana, Onion.
+- Collateral-Free Limit: Standard ₹1,60,000; Extended to ₹2,00,000 for Tamil Nadu farmers with online Chitta/Adangal land verification.
+- KCC Renewal/Enhancement: Annual renewal based on crop cycle and repayment record.
+
+6.2 Interest Subvention & Incentive Structure:
+- Base Interest Rate: 7.00% p.a. for short-term crop loans up to ₹3,00,000.
+- Government 2% Interest Subvention reduces base rate to 5.00% p.a.
+- Additional 3% Prompt Repayment Incentive (PRI) reduces effective rate to 4.00% p.a. for farmers repaying on time.
+- ATM-enabled RuPay KCC cards issued for crop loan withdrawals at any ATM.
+
+6.3 KCC Documentation:
+- PAN or Form 60, Aadhaar, Chitta/Adangal (Tamil Nadu land record), VAO crop cultivation certificate, 2 photographs, Proof of landholding.
+
+CHAPTER 7: SBI MUDRA & MSME BUSINESS LOANS
+--------------------------------------------------------------------------------
+7.1 Pradhan Mantri MUDRA Yojana at SBI:
+- Shishu: Up to ₹50,000 via YONO Instant Mudra (e-Mudra disbursal within 5 minutes for existing savings customers with 6 months account history).
+- Kishore: ₹50,001 to ₹5,00,000 (business plan required, 2 years vintage).
+- Tarun: ₹5,00,001 to ₹10,00,000 (audited financials required, 3 years vintage).
+- Tarun Plus: ₹10,00,001 to ₹20,00,000 (collateral/third-party guarantee required).
+- CGTMSE Coverage: Collateral-free up to ₹5,00,00,000 for eligible MSME manufacturing/service units.
+
+7.2 SBI SME Credit Loan (Business Installment Loan):
+- Maximum Loan: ₹5,00,00,000 for manufacturing; ₹2,00,00,000 for services/retail.
+- Interest Rate: From 8.90% p.a. for CIBIL 750+ businesses; up to 13.00% p.a. for lower-rated units.
+- Business Vintage Required: Minimum 3 years with audited profit and positive net worth.
+
+CHAPTER 8: CUSTOMER RIGHTS & GRIEVANCE REDRESSAL AT SBI
+--------------------------------------------------------------------------------
+8.1 Key Fact Statement & APR:
+- Mandatory KFS provided for all retail loans with complete Annual Percentage Rate (APR) disclosure.
+- Cooling-off period: 3 days for Personal Loans, 7 days for Housing Loans.
+
+8.2 Complaint Resolution Steps:
+- Step 1: Contact Branch Manager.
+- Step 2: Toll Free 1800 1234 / 1800 2100 (24x7).
+- Step 3: Principal Nodal Officer at SBI LHO Chennai.
+- Step 4: RBI Integrated Ombudsman (https://cms.rbi.org.in).
+
+CHAPTER 9: EXHAUSTIVE DOCUMENTATION CHECKLIST FOR SBI LOANS
+--------------------------------------------------------------------------------
+- Salaried (Home Loan): PAN, Aadhaar, 3 months salary slips, Form 16 (2 years), 6 months salary account bank statement, Property documents.
+- Salaried (Personal Loan): PAN, Aadhaar, 3 months salary slips, 3 months bank statement.
+- Self-Employed (Any Loan): PAN, Aadhaar, ITR with computation (3 years), Audited Balance Sheet & P&L, GST Returns (12 months), 12 months current account statements.
+- KCC/Agri: PAN or Form 60, Aadhaar, Chitta/Adangal land proof, VAO crop cultivation certificate, 2 photos.
+- Education Loan: PAN, Aadhaar, Admission Letter, Fee Structure, Co-borrower income proof, Collateral documents if applicable.
+
+CHAPTER 10: POLICY DEVIATIONS, HARD RULES & RELATIONSHIP CONCESSIONS
+--------------------------------------------------------------------------------
+10.1 Hard Rejection Criteria (No Deviation Permitted):
+- CIBIL score below 650 (non-salary account, non-CSP).
+- FOIR exceeding 65% (or enhanced limit if applicable).
+- Age below 18 or above 70 at Home Loan maturity.
+- NPA (Non-Performing Asset) tag or 90+ Days Past Due (DPD) in last 24 months.
+- Loan amount exceeding permissible LTV ratio.
+
+10.2 Concessions & Leniency:
+- SBI Corporate Salary Package (CSP): 50 points CIBIL margin leniency (min 650), 5% FOIR relaxation, 0.05% interest concession, zero processing fees.
+- Women Home Loan Borrowers: 0.05% interest concession on all SBI Home Loan variants.
+- Tier A MNC Employer: Additional 5% FOIR relaxation; eligible for FOIR up to 75% with CPC approval.
+- Pradhan Mantri Awas Yojana (PMAY) beneficiaries: Interest subsidy up to ₹2,67,280 for EWS/LIG category under CLSS.
+================================================================================
