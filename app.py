@@ -928,27 +928,21 @@ def serve_static_file(path):
     return "File not found."
 
 import gradio as gr
-from fastapi import FastAPI
 from fastapi.middleware.wsgi import WSGIMiddleware
 
-fastapi_app = FastAPI(title="Loan-IQ API Engine")
-fastapi_app.mount("/", WSGIMiddleware(app))
-
-# Define Gradio Blocks demo at top-level module scope for HF Space detection
 with gr.Blocks(title="Loan-IQ Autonomous Credit Risk Engine") as demo:
     gr.HTML("""
     <style>
       body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
       iframe { width: 100%; height: 95vh; border: none; }
     </style>
-    <iframe src="/index.html"></iframe>
+    <iframe src="/flask"></iframe>
     """)
 
-app_gradio = gr.mount_gradio_app(fastapi_app, demo, path="/gradio")
+demo.app.mount("/flask", WSGIMiddleware(app))
 
 if __name__ == "__main__":
-    import uvicorn
     port = int(os.getenv("PORT", 7860))
     host = os.getenv("HOST", "0.0.0.0")
-    print(f"🚀 Starting Loan-IQ Server at http://{host}:{port} ...")
-    uvicorn.run(fastapi_app, host=host, port=port)
+    print(f"🚀 Starting Loan-IQ Gradio Server at http://{host}:{port} ...")
+    demo.launch(server_name=host, server_port=port)
