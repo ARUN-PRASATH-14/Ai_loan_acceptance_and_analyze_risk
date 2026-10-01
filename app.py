@@ -91,12 +91,14 @@ def init_shap_explainer(model):
     except Exception as e:
         print(f"TreeExplainer warning: {e}. Attempting predict_proba Explainer fallback...")
         try:
+            masker = np.zeros((1, len(encoded_features)))
             if hasattr(model, "predict_proba"):
-                return shap.Explainer(model.predict_proba)
-            return shap.Explainer(model)
+                return shap.Explainer(model.predict_proba, masker)
+            return shap.Explainer(model, masker)
         except Exception as e2:
             print(f"SHAP Explainer fallback notice: {e2}")
             return None
+
 
 explainer = init_shap_explainer(model)
 
