@@ -9,6 +9,8 @@ It combines a 2-tier Stacking Ensemble Classifier (XGBoost, LightGBM, CatBoost, 
 
 Furthermore, the architecture integrates comprehensive compliance protocols aligned with RBI Master Directions (KYC/AML) and Video Customer Identification Processes (V-CIP). It provides granular local SHAP feature impact attributions that explain the exact mathematical weight of credit bureau scores, FOIR ratios, and income factors behind every decision, fulfilling modern banking explainable AI (XAI) mandates. This dual capability ensures both high predictive accuracy and total regulatory transparency for diverse credit products including Home, Personal, Auto, and Education loans.
 
+Additionally, Loan-IQ is engineered for seamless cloud containerization and distributed API microservice integration across web and mobile platforms. Hosted on high-performance cloud environments with automated health checks, lazy model loading, and lightweight REST/Gradio interfaces, the architecture provides sub-second latency for real-time credit decisioning. This scalable design enables seamless interoperability with core banking systems, loan origination platforms (LOS), and automated credit bureau APIs.
+
 The system uses AI to predict creditworthiness, learn from historical lending data, and improve its response over time. With a user-friendly dashboard, it provides real-time alerts, credit risk visualization, and detailed logs for better decision-making. Loan-IQ aims to create a resilient, secure, and intelligent financial technology infrastructure that supports continuous, compliant credit processing in disaster, high-risk, and enterprise banking scenarios.
 
 <br><br>
